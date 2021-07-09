@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.movie_container {
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    padding: 20px;
+}
+.movie_container img {
+    max-height: 100px;
+    object-fit: contain;
+    width: 100%;
+    margin-right: 10px;
+    transition: transform 450ms;
+}
+
+.movie_container::-webkit-scrollbar {
+    display: none;
+
+}
+
