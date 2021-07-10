@@ -17,9 +17,39 @@ const comedyMovieRow = document.getElementById('comedyMoviesRow');
 const horrorMovieRow = document.getElementById('horrorMoviesRow');
 const romanceMovieRow = document.getElementById('romanceMoviesRow');
 const documentaryRow = document.getElementById('documentariesRow');
+const jumbotron_El = document.getElementById('jumbotron');
+const jumbotron_Title = document.getElementById('jumbotron_Title');
+const jumbotron_Description = document.getElementById('jumbotron_Description');
 //test api connections
 
+function createJumbotron() {
+    fetch(netflix_Originals_URL)
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => {
+        let randomIndex = Math.floor(Math.random() * data.results.length - 1);
+        jumbotron_El.style.backgroundImage = `url(${base_Image_URL}${data.results[randomIndex].poster_path})`;
+        jumbotron_El.style.backgroundPosition = 'center';
+        jumbotron_El.style.backgroundSize = 'cover';
+        if(data.results[randomIndex].title) {
+            jumbotron_Title.textContent = data.results[randomIndex].title;
+            
+            
+        } else if(data.results[randomIndex].name) {
+            jumbotron_Title.textContent = data.results[randomIndex].name;
+            
+            
+        } else {
+            jumbotron_Title.textContent = data.results[randomIndex].original_title;
 
+        }
+        jumbotron_Description.textContent = data.results[randomIndex].overview;
+        
+        
+    })
+    
+}
 
 function createTrendingNow() {
     fetch(trending_Now_URL)
@@ -46,12 +76,12 @@ function createNetflixOriginals() {
             let movieImage = document.createElement('img');
             if(movie.backdrop_path == null) {
                 movieImage.src = `${base_Image_URL}${movie.poster_path}`;
-
-
+                
+                
             } else {
                 movieImage.src = `${base_Image_URL}${movie.backdrop_path}`;
-
-
+                
+                
             }
             netflixOriginalsRow.appendChild(movieImage);
         });
@@ -87,12 +117,12 @@ function createActionMovies() {
             let movieImage = document.createElement('img');
             if(movie.backdrop_path == null) {
                 movieImage.src = `${base_Image_URL}${movie.poster_path}`;
-
-
+                
+                
             } else {
                 movieImage.src = `${base_Image_URL}${movie.backdrop_path}`;
-
-
+                
+                
             }
             actionMovieRow.appendChild(movieImage);
         });
@@ -110,12 +140,12 @@ function createComedyMovies() {
             let movieImage = document.createElement('img');
             if(movie.backdrop_path == null) {
                 movieImage.src = `${base_Image_URL}${movie.poster_path}`;
-
-
+                
+                
             } else {
                 movieImage.src = `${base_Image_URL}${movie.backdrop_path}`;
-
-
+                
+                
             }
             comedyMovieRow.appendChild(movieImage);
         });
@@ -134,12 +164,12 @@ function createHorrorMovies() {
             let movieImage = document.createElement('img');
             if(movie.backdrop_path == null) {
                 movieImage.src = `${base_Image_URL}${movie.poster_path}`;
-
-
+                
+                
             } else {
                 movieImage.src = `${base_Image_URL}${movie.backdrop_path}`;
-
-
+                
+                
             }
             horrorMovieRow.appendChild(movieImage);
         });
@@ -158,12 +188,12 @@ function createRomanceMovies() {
             let movieImage = document.createElement('img');
             if(movie.backdrop_path == null) {
                 movieImage.src = `${base_Image_URL}${movie.poster_path}`;
-
-
+                
+                
             } else {
                 movieImage.src = `${base_Image_URL}${movie.backdrop_path}`;
-
-
+                
+                
             }
             romanceMovieRow.appendChild(movieImage);
         });
@@ -182,21 +212,22 @@ function createDocumentaries() {
             let movieImage = document.createElement('img');
             if(movie.backdrop_path == null) {
                 movieImage.src = `${base_Image_URL}${movie.poster_path}`;
-
-
+                
+                
             } else {
                 movieImage.src = `${base_Image_URL}${movie.backdrop_path}`;
-
-
+                
+                
             }
             documentaryRow.appendChild(movieImage);
         });
         
     })
-
+    
 }
 
 function createRows() {
+    createJumbotron();
     createTrendingNow();
     createNetflixOriginals();
     createTopRated();

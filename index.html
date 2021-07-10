@@ -1,17 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="overlay">
+    <div class="jumbotron" id="jumbotron">
+      <header>
+        <h1>Netflix</h1>
+      </header>
+      <div class="jumbotron_Padding">
+        <h2 id="jumbotron_Title"></h2>
+        <p id="jumbotron_Description"></p>
+        <div class="jumbrotron-buttons">
+          <button class="jumbotronBtn" id="playBtn">Play</button>
+          <button class="jumbotronBtn" id="listBtn">My List</button>
+          
+        </div>
+        
+      </div>
+    </div>
+    
+  </div>
+  <div class="default-padding">
+    
+    
     <div class="row">
       <!--title-->
       <h2 class="row_Title">Trending Now</h2>
-
+      
       <div class="movie_container" id="trendingNowContainer">
         <!--this will house the movie thumbnails-->
       </div>
@@ -19,7 +40,7 @@
     <div class="row">
       <!--title-->
       <h2 class="row_Title">Netflix Originals</h2>
-
+      
       <div class="movie_container" id="netflixOriginalsRow">
         <!--this will house the movie thumbnails-->
       </div>
@@ -27,51 +48,52 @@
     <div class="row">
       <!--title-->
       <h2 class="row_Title">Top Rated</h2>
-
-      <div class="movie_container"  id="topRatedRow">
+      
+      <div class="movie_container" id="topRatedRow">
         <!--this will house the movie thumbnails-->
       </div>
     </div>
     <div class="row">
       <!--title-->
       <h2 class="row_Title">Action Movies</h2>
-
-      <div class="movie_container"  id="actionMoviesRow">
+      
+      <div class="movie_container" id="actionMoviesRow">
         <!--this will house the movie thumbnails-->
       </div>
     </div>
     <div class="row">
       <!--title-->
       <h2 class="row_Title">Comedy Movies</h2>
-
-      <div class="movie_container"  id="comedyMoviesRow">
+      
+      <div class="movie_container" id="comedyMoviesRow">
         <!--this will house the movie thumbnails-->
       </div>
     </div>
     <div class="row">
       <!--title-->
       <h2 class="row_Title">Horror Movies</h2>
-
-      <div class="movie_container"  id="horrorMoviesRow">
+      
+      <div class="movie_container" id="horrorMoviesRow">
         <!--this will house the movie thumbnails-->
       </div>
     </div>
     <div class="row">
       <!--title-->
       <h2 class="row_Title">Romance Movies</h2>
-
-      <div class="movie_container"  id="romanceMoviesRow">
+      
+      <div class="movie_container" id="romanceMoviesRow">
         <!--this will house the movie thumbnails-->
       </div>
     </div>
     <div class="row">
       <!--title-->
       <h2 class="row_Title">Documentaries</h2>
-
-      <div class="movie_container"  id="documentariesRow">
+      
+      <div class="movie_container" id="documentariesRow">
         <!--this will house the movie thumbnails-->
       </div>
     </div>
-    <script src="app.js"></script>
-  </body>
+  </div>
+  <script src="app.js"></script>
+</body>
 </html>
